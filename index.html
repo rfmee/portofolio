@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RFMEE | Angelic Sky Art Commission</title>
+
+<style>
+:root{
+--bg-main:#f8fbff;
+--bg-card:#ffffff;
+--text-main:#2a2f3a;
+--text-muted:#6f7a8a;
+--sky:#9cc9ff;
+--sky-soft:#e6f2ff;
+--gold:#d6b36a;
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+color:var(--text-main);
+background:
+radial-gradient(circle at top,#fff 0%,var(--sky-soft) 45%,var(--bg-main) 100%),
+repeating-linear-gradient(45deg,rgba(156,201,255,.05),rgba(156,201,255,.05) 1px,transparent 1px,transparent 14px);
+animation:fadeIn .8s ease forwards;
+}
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+.container{max-width:1000px;margin:auto;padding:20px}
+
+/* HEADER */
+header{
+text-align:center;
+padding:100px 20px 70px;
+position:relative;
+}
+
+header::before{
+content:"";
+position:absolute;
+top:30px;
+left:50%;
+transform:translateX(-50%);
+width:160px;
+height:32px;
+border-radius:50%;
+border:3px solid var(--gold);
+background:rgba(255,255,255,.7);
+box-shadow:0 0 30px rgba(214,179,106,.4);
+}
+
+header h1{font-size:3rem;margin-bottom:10px}
+.subtitle{color:var(--text-muted)}
+
+.status{
+margin-top:24px;
+padding:10px 30px;
+display:inline-block;
+border-radius:40px;
+background:linear-gradient(135deg,var(--sky),#cfe6ff);
+color:#fff;
+font-weight:bold;
+}
+
+/* NAV */
+nav{text-align:center;margin-bottom:50px}
+nav a{
+margin:0 16px;
+text-decoration:none;
+color:var(--text-main);
+font-weight:600;
+}
+
+/* DIVIDER */
+.divider{
+margin:60px 0;
+display:flex;
+justify-content:center;
+}
+.divider svg{
+width:280px;
+fill:none;
+stroke:var(--sky);
+stroke-width:2.2;
+opacity:.9;
+}
+
+/* SECTION */
+section{
+background:var(--bg-card);
+padding:42px;
+margin-bottom:55px;
+border-radius:26px;
+box-shadow:0 18px 40px rgba(0,0,0,.06);
+opacity:0;
+transform:translateY(20px);
+animation:fadeUp .8s ease forwards;
+}
+
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+h2{
+margin-top:0;
+border-left:4px solid var(--sky);
+padding-left:14px;
+}
+
+/* FILTER */
+.filters{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:24px;
+}
+
+.filter-btn{
+padding:8px 18px;
+border-radius:30px;
+border:none;
+cursor:pointer;
+background:#eef5ff;
+font-weight:600;
+}
+
+.filter-btn.active{
+background:linear-gradient(135deg,var(--sky),#cfe6ff);
+color:white;
+}
+
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:24px;
+}
+
+.gallery-item{
+position:relative;
+border-radius:20px;
+overflow:hidden;
+cursor:pointer;
+}
+
+.gallery-item img{
+width:100%;
+aspect-ratio:1/1;
+object-fit:cover;
+box-shadow:0 12px 28px rgba(0,0,0,.12);
+}
+
+/* LABELS */
+.labels{
+position:absolute;
+bottom:12px;
+left:12px;
+display:flex;
+flex-wrap:wrap;
+gap:6px;
+}
+
+.label{
+font-size:.75rem;
+padding:6px 10px;
+border-radius:20px;
+background:rgba(255,255,255,.85);
+font-weight:600;
+backdrop-filter:blur(4px);
+}
+
+/* PREVIEW */
+.preview{
+position:fixed;
+inset:0;
+background:rgba(10,15,30,.85);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.preview img{
+max-width:92%;
+max-height:92%;
+border-radius:20px;
+}
+
+.preview span{
+position:absolute;
+top:20px;
+right:26px;
+font-size:2rem;
+color:white;
+cursor:pointer;
+}
+
+/* PRICES */
+.pricing-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.price-card{
+padding:30px;
+border-radius:24px;
+background:#f6faff;
+text-align:center;
+box-shadow:0 14px 32px rgba(0,0,0,.08);
+}
+
+.price{
+font-size:1.7rem;
+font-weight:bold;
+color:var(--sky);
+}
+
+/* BUTTON */
+.btn{
+display:inline-block;
+margin:12px;
+padding:14px 36px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+color:white;
+background:linear-gradient(135deg,var(--sky),#cfe6ff);
+}
+
+.btn.vgen{
+background:linear-gradient(135deg,#b9a6ff,#e4ddff);
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+color:var(--text-muted);
+padding:40px 0;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+<h1>xRfmee</h1>
+<p class="subtitle">Anime Illustration • Character Designer</p>
+<div class="status">COMMISSIONS OPEN</div>
+</header>
+
+<nav>
+<a href="#gallery">Gallery</a>
+<a href="#tos">ToS</a>
+<a href="#prices">Prices</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="divider">
+<svg viewBox="0 0 300 60">
+<path d="M150 30 C120 10 80 10 40 30"/>
+<path d="M150 30 C180 10 220 10 260 30"/>
+</svg>
+</div>
+
+<section id="gallery">
+<h2>Gallery</h2>
+
+<div class="filters">
+<button class="filter-btn active" data-filter="all">All</button>
+<button class="filter-btn" data-filter="headshot">Headshot</button>
+<button class="filter-btn" data-filter="bust">Bust Up</button>
+<button class="filter-btn" data-filter="half">Half Body</button>
+<button class="filter-btn" data-filter="full">Full Body</button>
+<button class="filter-btn" data-filter="chibi">Chibi</button>
+<button class="filter-btn" data-filter="simple">Simple BG</button>
+<button class="filter-btn" data-filter="detail">Detailed BG</button>
+</div>
+
+<div class="gallery">
+
+<div class="gallery-item" data-tags="headshot simple">
+<img src="images/art-1.webp">
+<div class="labels"><span class="label">Headshot</span><span class="label">Detailed BG</span></div>
+</div>
+
+<div class="gallery-item" data-tags="bust simple">
+<img src="images/art-2.webp">
+<div class="labels"><span class="label">Bust Up</span><span class="label">Color BG</span></div>
+</div>
+
+<div class="gallery-item" data-tags="half detail">
+<img src="images/art-3.webp">
+<div class="labels"><span class="label">Half Body</span><span class="label">Simple BG</span></div>
+</div>
+
+<div class="gallery-item" data-tags="full detail">
+<img src="images/art-4.webp">
+<div class="labels"><span class="label">Full Body</span><span class="label">Detailed BG</span></div>
+</div>
+
+<div class="gallery-item" data-tags="chibi simple">
+<img src="images/art-5.webp">
+<div class="labels"><span class="label">Chibi</span><span class="label">Simple BG</span></div>
+</div>
+
+</div>
+</section>
+
+<section id="tos">
+<h2>Terms of Service</h2>
+
+<h3>Payment</h3>
+<ul>
+    <li>All commissions require full payment (100%) upfront.</li>
+    <li>Payment is accepted via PayPal or platform-based payment (e.g. VGen).</li>
+    <li>Prices are listed in USD.</li>
+    <li>No refunds once the sketch has been approved.</li>
+</ul>
+
+<h3>Workflow & Revisions</h3>
+<ul>
+    <li>Turnaround time is approximately 1–3 weeks depending on complexity and queue.</li>
+    <li>A sketch will be sent for approval before coloring.</li>
+    <li>Up to <strong>3 minor revisions</strong> are allowed during the sketch phase.</li>
+    <li>Major changes after sketch approval or during coloring may incur additional fees.</li>
+</ul>
+
+<h3>Client Responsibility</h3>
+<ul>
+    <li><strong>Please include reference, pose, and preferred background when ordering.</strong></li>
+    <li>Clear and complete references help ensure the best possible result.</li>
+    <li>Missing or unclear information may affect turnaround time.</li>
+</ul>
+
+<h3>Usage & Rights</h3>
+<ul>
+    <li>Commissions are for <strong>personal use only</strong> unless stated otherwise.</li>
+    <li>Commercial usage requires an additional fee (+100% of base price).</li>
+    <li>I retain the right to display commissioned artwork in my portfolio and social media.</li>
+    <li>The client may not claim the artwork as their own.</li>
+</ul>
+
+<h3>Prohibited Use</h3>
+<ul>
+    <li>No use for AI training, NFTs, blockchain projects, or resale.</li>
+    <li>Do not remove my watermark or signature.</li>
+</ul>
+
+<h3>Agreement</h3>
+<ul>
+    <li>By commissioning me, you acknowledge that you have read and agreed to these terms.</li>
+</ul>
+</section>
+
+<section id="prices">
+<h2>Commission Prices</h2>
+
+<div class="pricing-grid">
+<div class="price-card"><h3>Headshot</h3><div class="price">$20</div></div>
+<div class="price-card"><h3>Bust Up</h3><div class="price">$25</div></div>
+<div class="price-card"><h3>Half Body</h3><div class="price">$45</div></div>
+<div class="price-card"><h3>Full Body</h3><div class="price">$70</div></div>
+<div class="price-card"><h3>Chibi</h3><div class="price">$30</div></div>
+</div>
+
+<ul>
+<li>Simple background: +$10</li>
+<li>Detailed background: +$30–50</li>
+<li>Additional character: +100%</li>
+</ul>
+</section>
+
+<section id="contact" style="text-align:center">
+<h2>Contact & Order</h2>
+<p>Feel free to contact me if you have any questions before ordering.</p>
+<a class="btn" href="mailto:email@gmail.com">Email</a>
+<a class="btn" href="https://twitter.com/username">Twitter</a>
+<a class="btn vgen" href="https://vgen.co/USERNAME">VGen</a>
+</section>
+
+<footer>© 2025 RFMEE • Comission Art</footer>
+
+</div>
+
+<div class="preview" id="preview">
+<span onclick="closePreview()">×</span>
+<img id="previewImg">
+</div>
+
+<script>
+const items=[...document.querySelectorAll('.gallery-item')];
+const preview=document.getElementById('preview');
+const previewImg=document.getElementById('previewImg');
+let index=0;
+
+items.forEach((item,i)=>{
+item.onclick=()=>{
+index=i;
+preview.style.display='flex';
+previewImg.src=item.querySelector('img').src;
+};
+});
+
+function closePreview(){preview.style.display='none'}
+
+let startX=0;
+preview.addEventListener('touchstart',e=>startX=e.touches[0].clientX);
+preview.addEventListener('touchend',e=>{
+let endX=e.changedTouches[0].clientX;
+if(startX-endX>50) next();
+if(endX-startX>50) prev();
+});
+
+function next(){index=(index+1)%items.length;previewImg.src=items[index].querySelector('img').src}
+function prev(){index=(index-1+items.length)%items.length;previewImg.src=items[index].querySelector('img').src}
+
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+btn.onclick=()=>{
+document.querySelector('.filter-btn.active').classList.remove('active');
+btn.classList.add('active');
+const f=btn.dataset.filter;
+items.forEach(item=>{
+item.style.display=(f==='all'||item.dataset.tags.includes(f))?'block':'none';
+});
+};
+});
+</script>
+
+</body>
+</html>
